@@ -18,7 +18,6 @@ SOS_token = 0
 EOS_token = 1
 input_lang = 'eng'
 output_lang = 'jpn'
-n_words = 2
 
 
 class Lang:
@@ -365,5 +364,3 @@ hidden_size = 256
 encoder1 = EncoderRNN(input_lang.n_words, hidden_size)
 attn_decoder1 = AttnDecoderRNN(hidden_size, output_lang.n_words, 1, dropout_p=0.1)
 trainEpochs(encoder1, attn_decoder1, 75000, print_every=5000)
-
-evaluateAndShowAttention("elle est trop petit .")
